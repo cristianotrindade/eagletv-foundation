@@ -13,7 +13,7 @@ export function Hero() {
           <div className="mb-6 inline-flex items-center gap-2 border border-primary/30 bg-primary/8 px-3 py-2 text-xs font-bold uppercase tracking-[0.14em] text-primary">
             <span className="size-1.5 bg-primary shadow-glow" /> Nova visão de entretenimento
           </div>
-          <h1 className="font-display text-[clamp(2.7rem,7vw,5.7rem)] font-extrabold leading-[0.98] text-foreground">
+          <h1 className="font-display text-4xl font-extrabold leading-[1.02] text-foreground sm:text-[clamp(2.7rem,7vw,5.7rem)] sm:leading-[0.98]">
             Seu entretenimento.<br /><span className="text-primary">Do seu jeito.</span>
           </h1>
           <p className="mt-7 max-w-xl text-base leading-7 text-muted-foreground sm:text-lg sm:leading-8">
