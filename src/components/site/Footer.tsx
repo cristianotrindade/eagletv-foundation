@@ -1,5 +1,6 @@
 import { Logo } from "@/components/brand/Logo";
 import { SITE_CONFIG } from "@/config/site";
+import { getWhatsAppUrl } from "@/config/site";
 
 export function Footer() {
   return (
@@ -8,7 +9,7 @@ export function Footer() {
         <div className="max-w-sm"><Logo /><p className="mt-5 text-sm leading-6 text-muted-foreground">{SITE_CONFIG.brand.description}</p></div>
         <FooterColumn title="Navegação" links={SITE_CONFIG.navigation} />
         <FooterColumn title="Links" links={SITE_CONFIG.footerLinks} />
-        <div><h2 className="text-sm font-bold text-foreground">Contato</h2><p className="mt-5 text-sm text-muted-foreground">WhatsApp</p><p className="mt-2 font-mono text-xs text-primary">WHATSAPP_NUMBER</p></div>
+        <div><h2 className="text-sm font-bold text-foreground">Contato</h2><p className="mt-5 text-sm text-muted-foreground">WhatsApp</p><a href={getWhatsAppUrl() ?? "#suporte"} target="_blank" rel="noreferrer" className="mt-2 inline-block font-mono text-xs text-primary transition-colors hover:text-brand-electric">+55 11 95114-9375</a></div>
       </div>
       <div className="border-t border-border"><div className="mx-auto flex max-w-7xl flex-col gap-2 px-5 py-6 text-xs text-muted-foreground sm:flex-row sm:items-center sm:justify-between sm:px-8 lg:px-10"><p>© 2026 EagleTV. Todos os direitos reservados.</p><p>Visão · Velocidade · Liberdade</p></div></div>
     </footer>

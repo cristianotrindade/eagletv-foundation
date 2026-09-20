@@ -1,14 +1,22 @@
-import { Play } from "lucide-react";
+import { Flame, Monitor, Play, Smartphone, Tv } from "lucide-react";
 import { EagleMark } from "@/components/brand/Logo";
+
+const devices = [
+  { icon: Tv, name: "Samsung Smart TV" },
+  { icon: Monitor, name: "LG Smart TV" },
+  { icon: Flame, name: "Fire TV Stick" },
+  { icon: Smartphone, name: "Android" },
+] as const;
 
 export function VisualShowcase() {
   return (
     <section id="dispositivos" className="scroll-mt-20 overflow-hidden border-b border-border py-20 sm:py-28">
-      <div className="mx-auto grid max-w-7xl items-center gap-14 px-5 sm:px-8 lg:grid-cols-[.75fr_1.25fr] lg:px-10">
+      <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
+        <div className="grid items-center gap-14 lg:grid-cols-[.75fr_1.25fr]">
         <div>
           <p className="section-kicker">Uma marca. Muitas possibilidades.</p>
-          <h2 className="mt-4 font-display text-3xl font-bold text-foreground sm:text-5xl">Sua experiência, em sintonia com você.</h2>
-          <p className="mt-5 max-w-lg leading-7 text-muted-foreground">Uma presença visual pensada para acompanhar diferentes telas sem perder clareza, velocidade e personalidade.</p>
+          <h2 className="mt-4 font-display text-3xl font-bold text-foreground sm:text-5xl">Assista nos seus dispositivos</h2>
+          <p className="mt-5 max-w-lg leading-7 text-muted-foreground">A experiência EagleTV pode ser utilizada nos dispositivos compatíveis, mantendo uma apresentação simples e organizada.</p>
           <div className="mt-8 flex items-center gap-4 text-sm text-muted-foreground">
             <span className="h-px w-12 bg-primary" /> TV · Smartphone · Tablet
           </div>
@@ -27,6 +35,15 @@ export function VisualShowcase() {
           <div className="absolute bottom-0 right-[2%] h-[52%] w-[24%] rounded-[1.6rem] border-[5px] border-device bg-screen p-1.5 shadow-device sm:right-[5%] sm:w-[20%]">
             <div className="concept-screen grid h-full place-items-center rounded-[1rem]"><EagleMark className="h-12 w-14" /></div>
           </div>
+        </div>
+        </div>
+        <div className="mt-12 grid gap-px overflow-hidden border border-border bg-border sm:grid-cols-2 lg:grid-cols-4">
+          {devices.map(({ icon: Icon, name }) => (
+            <article key={name} className="flex min-h-40 flex-col justify-between bg-card p-6 transition-colors hover:bg-card-hover">
+              <Icon className="size-7 text-primary" aria-hidden="true" />
+              <h3 className="mt-10 font-display text-lg font-bold text-foreground">{name}</h3>
+            </article>
+          ))}
         </div>
       </div>
     </section>
