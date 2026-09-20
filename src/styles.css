@@ -59,29 +59,57 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+  --color-brand-electric: var(--brand-electric);
+  --color-surface: var(--surface);
+  --color-card-hover: var(--card-hover);
+  --color-header: var(--header);
+  --color-footer: var(--footer);
+  --color-overlay: var(--overlay);
+  --color-device: var(--device);
+  --color-screen: var(--screen);
+  --color-whatsapp: var(--whatsapp);
+  --color-whatsapp-foreground: var(--whatsapp-foreground);
+  --font-sans: "Manrope", sans-serif;
+  --font-display: "Sora", sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
+  --shadow-neon: 0 0 28px color-mix(in oklab, var(--primary) 28%, transparent);
+  --shadow-neon-strong: 0 0 40px color-mix(in oklab, var(--primary) 42%, transparent);
+  --shadow-header: 0 12px 34px color-mix(in oklab, var(--background) 72%, transparent);
+  --shadow-device: 0 30px 70px color-mix(in oklab, var(--background) 72%, transparent);
+  --shadow-whatsapp: 0 14px 30px color-mix(in oklab, var(--whatsapp) 30%, transparent);
 }
 
 :root {
-  --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.129 0.042 264.695);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.129 0.042 264.695);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.129 0.042 264.695);
-  --primary: oklch(0.208 0.042 265.755);
-  --primary-foreground: oklch(0.984 0.003 247.858);
-  --secondary: oklch(0.968 0.007 247.896);
-  --secondary-foreground: oklch(0.208 0.042 265.755);
-  --muted: oklch(0.968 0.007 247.896);
-  --muted-foreground: oklch(0.554 0.046 257.417);
-  --accent: oklch(0.968 0.007 247.896);
-  --accent-foreground: oklch(0.208 0.042 265.755);
+  --radius: 0.35rem;
+  --background: oklch(0.105 0.018 264);
+  --foreground: oklch(0.97 0.008 250);
+  --card: oklch(0.145 0.024 260);
+  --card-hover: oklch(0.175 0.032 257);
+  --card-foreground: oklch(0.97 0.008 250);
+  --popover: oklch(0.155 0.026 260);
+  --popover-foreground: oklch(0.97 0.008 250);
+  --primary: oklch(0.76 0.19 224);
+  --primary-foreground: oklch(0.105 0.018 264);
+  --brand-electric: oklch(0.66 0.22 252);
+  --secondary: oklch(0.24 0.05 260);
+  --secondary-foreground: oklch(0.95 0.01 250);
+  --muted: oklch(0.19 0.025 260);
+  --muted-foreground: oklch(0.72 0.025 255);
+  --accent: oklch(0.52 0.2 286);
+  --accent-foreground: oklch(0.98 0.005 250);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.984 0.003 247.858);
-  --border: oklch(0.929 0.013 255.508);
-  --input: oklch(0.929 0.013 255.508);
-  --ring: oklch(0.704 0.04 256.788);
+  --border: oklch(0.32 0.035 260 / 55%);
+  --input: oklch(0.27 0.04 260);
+  --ring: oklch(0.76 0.19 224);
+  --surface: oklch(0.125 0.02 263);
+  --header: oklch(0.105 0.018 264 / 86%);
+  --footer: oklch(0.085 0.014 264);
+  --overlay: oklch(0.04 0.01 264 / 72%);
+  --device: oklch(0.31 0.035 259);
+  --screen: oklch(0.13 0.035 260);
+  --whatsapp: oklch(0.72 0.19 151);
+  --whatsapp-foreground: oklch(0.12 0.02 151);
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
@@ -140,5 +168,56 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+    text-rendering: optimizeLegibility;
   }
+
+  html { scroll-behavior: smooth; }
+  ::selection { background: color-mix(in oklab, var(--primary) 40%, transparent); color: var(--foreground); }
+}
+
+@utility shadow-neon { box-shadow: var(--shadow-neon); }
+@utility shadow-neon-strong { box-shadow: var(--shadow-neon-strong); }
+@utility shadow-header { box-shadow: var(--shadow-header); }
+@utility shadow-device { box-shadow: var(--shadow-device); }
+@utility shadow-whatsapp { box-shadow: var(--shadow-whatsapp); }
+@utility drop-shadow-neon { filter: drop-shadow(0 0 24px color-mix(in oklab, var(--primary) 55%, transparent)); }
+
+@utility hero-grid {
+  background-image: linear-gradient(color-mix(in oklab, var(--border) 45%, transparent) 1px, transparent 1px), linear-gradient(90deg, color-mix(in oklab, var(--border) 45%, transparent) 1px, transparent 1px);
+  background-size: 72px 72px;
+}
+
+@utility hero-light {
+  background: radial-gradient(circle at 76% 44%, color-mix(in oklab, var(--brand-electric) 22%, transparent), transparent 29%), radial-gradient(circle at 63% 72%, color-mix(in oklab, var(--accent) 11%, transparent), transparent 24%), linear-gradient(90deg, var(--background) 32%, transparent 78%);
+}
+
+@utility section-kicker {
+  color: var(--primary);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+@utility concept-screen {
+  background: radial-gradient(circle at 50% 44%, color-mix(in oklab, var(--brand-electric) 24%, transparent), transparent 40%), linear-gradient(145deg, color-mix(in oklab, var(--screen) 84%, var(--brand-electric)), var(--screen));
+}
+
+@utility device-stage {
+  background-image: linear-gradient(color-mix(in oklab, var(--border) 35%, transparent) 1px, transparent 1px), linear-gradient(90deg, color-mix(in oklab, var(--border) 35%, transparent) 1px, transparent 1px);
+  background-size: 36px 36px;
+}
+
+@utility animate-rise { animation: rise 700ms ease-out both; }
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
 }
