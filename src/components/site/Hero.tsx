@@ -1,4 +1,4 @@
-import { ArrowRight, MessageCircle, Play } from "lucide-react";
+import { ArrowRight, MessageCircle } from "lucide-react";
 import { EagleMark } from "@/components/brand/Logo";
 import { Button } from "@/components/ui/button";
 import { getWhatsAppUrl } from "@/config/site";
@@ -32,10 +32,6 @@ export function Hero() {
           <div className="absolute inset-[28%] rotate-45 border border-primary/40 shadow-glow" />
           <div className="absolute inset-0 grid place-items-center">
             <EagleMark className="h-52 w-64 drop-shadow-neon" />
-          </div>
-          <div className="absolute bottom-[14%] left-0 flex items-center gap-3 border border-border bg-surface/80 px-4 py-3 backdrop-blur-xl">
-            <span className="grid size-9 place-items-center bg-primary text-primary-foreground"><Play className="size-4 fill-current" /></span>
-            <span><strong className="block text-sm text-foreground">EAGLETV</strong><small className="text-muted-foreground">Aperte o play</small></span>
           </div>
         </div>
       </div>
