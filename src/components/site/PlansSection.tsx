@@ -19,7 +19,7 @@ export function PlansSection() {
           <h2 className="mt-4 font-display text-3xl font-bold text-foreground sm:text-5xl">Escolha o plano ideal para você</h2>
           <p className="mt-5 max-w-2xl leading-7 text-muted-foreground">Planos pensados para diferentes necessidades, com opções para quem busca praticidade e flexibilidade.</p>
         </div>
-        <div className="mt-12 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+        <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {plans.map((plan) => (
             <article key={plan.name} className={cn("relative flex min-h-[360px] flex-col border bg-card p-7 transition-colors hover:bg-card-hover", plan.featured ? "border-primary shadow-neon" : "border-border")}>
               {plan.featured && <span className="absolute right-4 top-4 border border-primary/40 bg-primary/10 px-2.5 py-1 text-xs font-bold uppercase text-primary">Em evidência</span>}
