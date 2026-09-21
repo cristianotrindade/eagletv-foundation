@@ -4,4 +4,4 @@
 - [x] Criar seções comerciais solicitadas
 - [x] Integrar âncoras, CTAs, menu e rodapé
 - [x] Atualizar SEO e FAQ Schema
-- [ ] Validar interações e oito larguras de tela
+- [x] Validar interações e oito larguras de tela
