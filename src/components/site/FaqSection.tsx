@@ -14,7 +14,7 @@ export function FaqSection() {
             <AccordionItem key={item.question} value={`item-${index}`}>
               <AccordionTrigger className="py-6 text-left font-display text-base font-semibold text-foreground hover:text-primary hover:no-underline sm:text-lg">{item.question}</AccordionTrigger>
               <AccordionContent className="max-w-2xl pb-6 leading-7 text-muted-foreground">
-                {item.question === "Como faço para contratar?" ? <>{item.answer} <a href={getWhatsAppUrl() ?? "#suporte"} target="_blank" rel="noreferrer" className="font-semibold text-primary hover:text-brand-electric">Falar pelo WhatsApp.</a></> : item.answer}
+                {item.question === "Como faço para contratar?" ? <>Escolha um plano nesta página e fale com a EagleTV pelo <a href={getWhatsAppUrl() ?? "#suporte"} target="_blank" rel="noreferrer" className="font-semibold text-primary hover:text-brand-electric">WhatsApp</a> para continuar o atendimento.</> : item.answer}
               </AccordionContent>
             </AccordionItem>
           ))}
