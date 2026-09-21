@@ -1,3 +1,5 @@
+export const SITE_URL = "https://eagletv.ctvp2p.com";
+
 export const SITE_CONFIG = {
   brand: {
     name: "EAGLETV",
