@@ -21,7 +21,7 @@ export const SITE_CONFIG = {
   whatsappDefaultMessage: "Olá! Gostaria de conhecer a EagleTV.",
 } as const;
 
-export function getWhatsAppUrl(message = SITE_CONFIG.whatsappDefaultMessage) {
+export function getWhatsAppUrl(message: string = SITE_CONFIG.whatsappDefaultMessage) {
   const number = SITE_CONFIG.whatsappNumber.replace(/\D/g, "");
   if (!number) return null;
   return `https://wa.me/${number}?text=${encodeURIComponent(message)}`;
