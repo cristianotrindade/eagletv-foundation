@@ -9,7 +9,7 @@ export function Footer() {
         <div className="max-w-sm"><Logo /><p className="mt-5 text-sm leading-6 text-muted-foreground">{SITE_CONFIG.brand.description}</p></div>
         <FooterColumn title="Navegação" links={SITE_CONFIG.navigation} />
         <FooterColumn title="Links" links={SITE_CONFIG.footerLinks} />
-        <div><h2 className="text-sm font-bold text-foreground">Contato</h2><p className="mt-5 text-sm text-muted-foreground">WhatsApp</p><a href={getWhatsAppUrl() ?? "#suporte"} target="_blank" rel="noreferrer" className="mt-2 inline-block font-mono text-xs text-primary transition-colors hover:text-brand-electric">+55 11 95114-9375</a></div>
+        <div><h3 className="text-sm font-bold text-foreground">Contato</h3><p className="mt-5 text-sm text-muted-foreground">WhatsApp</p><a href={getWhatsAppUrl() ?? "#suporte"} target="_blank" rel="noreferrer" className="mt-2 inline-block font-mono text-xs text-primary transition-colors hover:text-brand-electric">+55 11 95114-9375</a></div>
       </div>
       <div className="border-t border-border"><div className="mx-auto flex max-w-7xl flex-col gap-2 px-5 py-6 text-xs text-muted-foreground sm:flex-row sm:items-center sm:justify-between sm:px-8 lg:px-10"><p>© 2026 EagleTV. Todos os direitos reservados.</p><p>Visão · Velocidade · Liberdade</p></div></div>
     </footer>
@@ -17,5 +17,5 @@ export function Footer() {
 }
 
 function FooterColumn({ title, links }: { title: string; links: ReadonlyArray<{ label: string; href: string }> }) {
-  return <div><h2 className="text-sm font-bold text-foreground">{title}</h2><nav className="mt-5 flex flex-col gap-3" aria-label={title}>{links.map((link) => <a key={link.label} href={link.href} className="w-fit text-sm text-muted-foreground transition-colors hover:text-primary">{link.label}</a>)}</nav></div>;
+  return <div><h3 className="text-sm font-bold text-foreground">{title}</h3><nav className="mt-5 flex flex-col gap-3" aria-label={title}>{links.map((link) => <a key={link.label} href={link.href} className="w-fit text-sm text-muted-foreground transition-colors hover:text-primary">{link.label}</a>)}</nav></div>;
 }

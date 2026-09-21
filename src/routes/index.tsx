@@ -11,36 +11,71 @@ import { EntertainmentSection } from "@/components/site/EntertainmentSection";
 import { FaqSection } from "@/components/site/FaqSection";
 import { FinalCta } from "@/components/site/FinalCta";
 import { PlansSection } from "@/components/site/PlansSection";
-import { FAQ_ITEMS } from "@/config/site";
+import { FAQ_ITEMS, SITE_URL } from "@/config/site";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
+const TITLE = "EagleTV — Entretenimento do Seu Jeito";
+const DESCRIPTION =
+  "Conheça a EagleTV, escolha seu plano e tenha uma experiência de entretenimento com praticidade, tecnologia e diferentes opções de acesso.";
+const OG_IMAGE = `${SITE_URL}/og-image.jpg`;
+
 export const Route = createFileRoute("/")({
   component: Index,
   head: () => ({
     meta: [
-      { title: "EagleTV — Uma Nova Era do Entretenimento" },
-      { name: "description", content: "Conheça a EagleTV, escolha seu plano e descubra uma experiência de entretenimento com praticidade e tecnologia." },
-      { property: "og:title", content: "EagleTV — Uma Nova Era do Entretenimento" },
-      { property: "og:description", content: "Conheça a EagleTV, escolha seu plano e descubra uma experiência de entretenimento com praticidade e tecnologia." },
+      { title: TITLE },
+      { name: "description", content: DESCRIPTION },
+      { name: "robots", content: "index, follow" },
+      { property: "og:title", content: TITLE },
+      { property: "og:description", content: DESCRIPTION },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "/" },
+      { property: "og:site_name", content: "EagleTV" },
+      { property: "og:locale", content: "pt_BR" },
+      { property: "og:url", content: `${SITE_URL}/` },
+      { property: "og:image", content: OG_IMAGE },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: TITLE },
+      { name: "twitter:description", content: DESCRIPTION },
+      { name: "twitter:image", content: OG_IMAGE },
     ],
-    links: [{ rel: "canonical", href: "/" }],
-    scripts: [{
-      type: "application/ld+json",
-      children: JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        mainEntity: FAQ_ITEMS.map((item) => ({
-          "@type": "Question",
-          name: item.question,
-          acceptedAnswer: { "@type": "Answer", text: item.answer },
-        })),
-      }),
-    }],
+    links: [{ rel: "canonical", href: `${SITE_URL}/` }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "Organization",
+              "@id": `${SITE_URL}/#organization`,
+              name: "EagleTV",
+              url: `${SITE_URL}/`,
+              logo: OG_IMAGE,
+            },
+            {
+              "@type": "WebSite",
+              "@id": `${SITE_URL}/#website`,
+              name: "EagleTV",
+              url: `${SITE_URL}/`,
+              inLanguage: "pt-BR",
+              description: DESCRIPTION,
+              publisher: { "@id": `${SITE_URL}/#organization` },
+            },
+          ],
+        }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: FAQ_ITEMS.map((item) => ({
+            "@type": "Question",
+            name: item.question,
+            acceptedAnswer: { "@type": "Answer", text: item.answer },
+          })),
+        }),
+      },
+    ],
   }),
 });
 
