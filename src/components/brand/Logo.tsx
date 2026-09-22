@@ -1,3 +1,4 @@
+import brandIcon from "@/assets/eagletv-logo.webp.asset.json";
 import { cn } from "@/lib/utils";
 
 type LogoProps = {
@@ -22,10 +23,25 @@ export function EagleMark({ className }: { className?: string }) {
   );
 }
 
+/** Ícone oficial da marca (águia neon). Para trocar, substitua o arquivo em src/assets. */
+export function BrandIcon({ className }: { className?: string }) {
+  return (
+    <img
+      src={brandIcon.url}
+      alt=""
+      aria-hidden="true"
+      width={44}
+      height={44}
+      decoding="async"
+      className={cn("h-11 w-11 shrink-0 object-contain", className)}
+    />
+  );
+}
+
 export function Logo({ className, compact = false }: LogoProps) {
   return (
-    <a href="#inicio" className={cn("inline-flex items-center gap-2.5", className)} aria-label="EagleTV — início">
-      <EagleMark />
+    <a href="#inicio" className={cn("inline-flex items-center gap-2", className)} aria-label="EagleTV — início">
+      <BrandIcon />
       {!compact && (
         <span className="font-display text-xl font-extrabold tracking-[0.08em] text-foreground">
           EAGLE<span className="text-primary">TV</span>
