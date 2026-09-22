@@ -31,7 +31,7 @@ export function Hero() {
           <div className="absolute inset-[18%] rotate-45 border border-brand-electric/25" />
           <div className="absolute inset-[28%] rotate-45 border border-primary/40 shadow-glow" />
           <div className="absolute inset-0 grid place-items-center">
-            <EagleMark className="h-52 w-64 drop-shadow-neon" />
+            <EagleMark eager className="h-60 w-60 drop-shadow-neon" />
           </div>
         </div>
       </div>

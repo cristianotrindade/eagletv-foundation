@@ -24,7 +24,7 @@ export function VisualShowcase() {
         <div className="device-stage relative min-h-[420px] sm:min-h-[520px]" aria-label="Representação conceitual da EagleTV em uma televisão, um tablet e um celular">
           <div className="absolute left-[4%] right-[4%] top-[5%] aspect-video border border-device bg-screen p-2 shadow-device sm:left-[8%] sm:right-[4%]">
             <div className="concept-screen grid h-full place-items-center overflow-hidden">
-              <div className="text-center"><EagleMark className="mx-auto h-20 w-24 sm:h-28 sm:w-36" /><p className="mt-4 font-display text-lg font-extrabold tracking-[0.12em] text-foreground sm:text-2xl">EAGLE<span className="text-primary">TV</span></p></div>
+              <div className="text-center"><EagleMark className="mx-auto h-24 w-24 sm:h-32 sm:w-32" /><p className="mt-4 font-display text-lg font-extrabold tracking-[0.12em] text-foreground sm:text-2xl">EAGLE<span className="text-primary">TV</span></p></div>
             </div>
             <div className="absolute -bottom-6 left-1/2 h-6 w-20 -translate-x-1/2 bg-device sm:w-28" />
             <div className="absolute -bottom-8 left-1/2 h-2 w-36 -translate-x-1/2 bg-device sm:w-48" />
@@ -33,7 +33,7 @@ export function VisualShowcase() {
             <div className="concept-screen flex h-full flex-col justify-end p-4"><span className="grid size-10 place-items-center bg-primary text-primary-foreground"><Play className="size-4 fill-current" /></span><p className="mt-3 font-display font-bold text-foreground">No seu ritmo.</p></div>
           </div>
           <div className="absolute bottom-0 right-[2%] h-[52%] w-[24%] rounded-[1.6rem] border-[5px] border-device bg-screen p-1.5 shadow-device sm:right-[5%] sm:w-[20%]">
-            <div className="concept-screen grid h-full place-items-center rounded-[1rem]"><EagleMark className="h-12 w-14" /></div>
+            <div className="concept-screen grid h-full place-items-center rounded-[1rem]"><EagleMark className="h-14 w-14" /></div>
           </div>
         </div>
         </div>
