@@ -1,5 +1,5 @@
-import brandIcon from "@/assets/eagletv-logo.webp.asset.json";
-import brandEagleLarge from "@/assets/eagletv-eagle-lg.webp.asset.json";
+import brandIcon from "@/assets/eagletv-logo.webp";
+import brandEagleLarge from "@/assets/eagletv-eagle-lg.webp";
 import { cn } from "@/lib/utils";
 
 type LogoProps = {
@@ -11,7 +11,7 @@ type LogoProps = {
 export function EagleMark({ className, eager = false }: { className?: string; eager?: boolean }) {
   return (
     <img
-      src={brandEagleLarge.url}
+      src={brandEagleLarge}
       alt=""
       aria-hidden="true"
       width={416}
@@ -27,7 +27,7 @@ export function EagleMark({ className, eager = false }: { className?: string; ea
 export function BrandIcon({ className }: { className?: string }) {
   return (
     <img
-      src={brandIcon.url}
+      src={brandIcon}
       alt=""
       aria-hidden="true"
       width={44}
