@@ -5,3 +5,4 @@
 - [x] Integrar âncoras, CTAs, menu e rodapé
 - [x] Atualizar SEO e FAQ Schema
 - [x] Validar interações e oito larguras de tela
+- [x] Publicar a versão estática na hospedagem HostGator (confirmado pelo usuário)
