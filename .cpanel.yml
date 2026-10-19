@@ -2,4 +2,4 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home1/camill53/eagletv.ctvp2p.com/
-    - /bin/cp -R * $DEPLOYPATH
+    - /bin/cp -R dist/client/* $DEPLOYPATH
