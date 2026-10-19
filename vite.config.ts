@@ -11,5 +11,10 @@ export default defineConfig({
     // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
     // nitro/vite builds from this
     server: { entry: "server" },
+    // The landing page is identical for every visitor (no auth/session data),
+    // so it is rendered to a static HTML file at build time. This makes the
+    // site deployable to any static host (e.g. cPanel/HostGator) and faster.
+    pages: [{ path: "/" }],
+    prerender: { enabled: true, autoStaticPathsDiscovery: false },
   },
 });
